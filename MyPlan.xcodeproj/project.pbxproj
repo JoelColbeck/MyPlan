@@ -11,6 +11,7 @@
 		C7F3FFA52607482800A63326 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F3FFA42607482800A63326 /* ContentView.swift */; };
 		C7F3FFA72607482900A63326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F3FFA62607482900A63326 /* Assets.xcassets */; };
 		C7F3FFAA2607482900A63326 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F3FFA92607482900A63326 /* Preview Assets.xcassets */; };
+		C7F3FFB8260749EB00A63326 /* questions.jsx in Resources */ = {isa = PBXBuildFile; fileRef = C7F3FFB7260749EB00A63326 /* questions.jsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		C7F3FFA62607482900A63326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7F3FFA92607482900A63326 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7F3FFAB2607482900A63326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7F3FFB7260749EB00A63326 /* questions.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = questions.jsx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,11 @@
 		C7F3FFA12607482800A63326 /* MyPlan */ = {
 			isa = PBXGroup;
 			children = (
+				C7F3FFB22607492600A63326 /* Views */,
 				C7F3FFA22607482800A63326 /* MyPlanApp.swift */,
-				C7F3FFA42607482800A63326 /* ContentView.swift */,
 				C7F3FFA62607482900A63326 /* Assets.xcassets */,
 				C7F3FFAB2607482900A63326 /* Info.plist */,
+				C7F3FFB32607493A00A63326 /* Resources */,
 				C7F3FFA82607482900A63326 /* Preview Content */,
 			);
 			path = MyPlan;
@@ -67,6 +70,22 @@
 				C7F3FFA92607482900A63326 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7F3FFB22607492600A63326 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7F3FFA42607482800A63326 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7F3FFB32607493A00A63326 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C7F3FFB7260749EB00A63326 /* questions.jsx */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F3FFAA2607482900A63326 /* Preview Assets.xcassets in Resources */,
+				C7F3FFB8260749EB00A63326 /* questions.jsx in Resources */,
 				C7F3FFA72607482900A63326 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
