@@ -10,6 +10,7 @@
 		C74A011E26075AE0009950CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A011D26075AE0009950CA /* LoginView.swift */; };
 		C74A01232607747B009950CA /* InterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A01222607747B009950CA /* InterView.swift */; };
 		C7B550BC26077A3C00581093 /* ButtonRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B550BB26077A3C00581093 /* ButtonRect.swift */; };
+		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
 		C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F3FFA22607482800A63326 /* MyPlanApp.swift */; };
 		C7F3FFA52607482800A63326 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F3FFA42607482800A63326 /* ContentView.swift */; };
 		C7F3FFA72607482900A63326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F3FFA62607482900A63326 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		C74A011D26075AE0009950CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C74A01222607747B009950CA /* InterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterView.swift; sourceTree = "<group>"; };
 		C7B550BB26077A3C00581093 /* ButtonRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRect.swift; sourceTree = "<group>"; };
+		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
 		C7F3FF9F2607482800A63326 /* MyPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F3FFA22607482800A63326 /* MyPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanApp.swift; sourceTree = "<group>"; };
 		C7F3FFA42607482800A63326 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		C7F3FFA12607482800A63326 /* MyPlan */ = {
 			isa = PBXGroup;
 			children = (
+				C7DCF38526357D0700551D4D /* ServerURL.swift */,
 				C7F3FFB22607492600A63326 /* Views */,
 				C7F3FFA22607482800A63326 /* MyPlanApp.swift */,
 				C7F3FFA62607482900A63326 /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */,
 				C74A011E26075AE0009950CA /* LoginView.swift in Sources */,
 				C7F3FFA52607482800A63326 /* ContentView.swift in Sources */,
 				C7B550BC26077A3C00581093 /* ButtonRect.swift in Sources */,
