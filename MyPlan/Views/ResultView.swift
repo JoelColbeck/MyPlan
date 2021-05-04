@@ -11,7 +11,7 @@ import Alamofire
 struct ResultView: View {
     
     @State var user: UserInfo?
-    @Environment(\.pin) var pin
+    @Environment(\.pinForLogin) var pin
     
     var body: some View {
         getRequest()
@@ -20,27 +20,28 @@ struct ResultView: View {
                 Text(user.username)
                 Text(user.survey)
             }
-            
         }
     }
     
     func getRequest() {
-        let requestURL = url.appendingPathComponent("users/\(pin)")
-        AF.request(requestURL)
-            .responseData { response in
-                guard let data = response.data else {
-                    return
+        if user == nil {
+            let requestURL = url.appendingPathComponent("users/\(pin)")
+            AF.request(requestURL)
+                .responseData { response in
+                    guard let data = response.data else {
+                        return
+                    }
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        let array = try decoder.decode([UserInfo].self, from: data)
+                        user = array.first!
+                        print(user)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
-                let decoder = JSONDecoder()
-
-                do {
-                    let array = try decoder.decode([UserInfo].self, from: data)
-                    user = array.first!
-                    print(user)
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
+        }
     }
 }
 

@@ -26,16 +26,17 @@ struct LoginView: View {
                     .font(.title)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
+                    .sheet(isPresented: $getResults, content: {
+                        ResultView()
+                            .pinForLogin(pin)
+                    })
+
                     
                     ButtonRect("I have PIN", width: 200, height: 50) {
                         getResults = true
                     }
                 }
                 .frame(width: 400, height: 75, alignment: .center)
-                .sheet(isPresented: $getResults, content: {
-                    ResultView()
-                        .environment(\.pin, pin)
-                })
                 
                 Spacer()
                 

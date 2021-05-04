@@ -7,13 +7,19 @@
 
 import SwiftUI
 
-struct Pin: EnvironmentKey {
+struct PinForLogin: EnvironmentKey {
     static var defaultValue: String = "122241"
 }
 
 extension EnvironmentValues {
-    var pin: String {
-        get { self[Pin] }
-        set { self[Pin] = newValue }
+    var pinForLogin: String {
+        get { self[PinForLogin] }
+        set { self[PinForLogin] = newValue }
+    }
+}
+
+extension View {
+    func pinForLogin(_ pin: String) -> some View {
+        environment(\.pinForLogin, pin)
     }
 }
