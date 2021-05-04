@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-//    @Binding var pin: String
+
     @State var pin: String = ""
     @State private var isEditing = false
+    @State var getResults = false
     
     var body: some View {
         NavigationView {
@@ -18,6 +19,8 @@ struct LoginView: View {
                 HStack (alignment: .center) {
                     TextField("PIN", text: $pin) { isEditing in
                         self.isEditing = isEditing
+                    } onCommit: {
+                        
                     }
                     .frame(width: 150.0, height: 50.0)
                     .font(.title)
@@ -25,27 +28,16 @@ struct LoginView: View {
                     .keyboardType(.numberPad)
                     
                     ButtonRect("I have PIN", width: 200, height: 50) {
-                        // sending requiest here
+                        getResults = true
                     }
                 }
-                .frame(width: 400, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 400, height: 75, alignment: .center)
+                .sheet(isPresented: $getResults, content: {
+                    ResultView()
+                        .environment(\.pin, pin)
+                })
                 
                 Spacer()
-                
-                ZStack {
-                    Color.init(red: 1.0, green: 0.90196, blue: 0)
-                        .frame(width: 300, height: 75, alignment: .center)
-                        .cornerRadius(10)
-                    
-                    NavigationLink(
-                        destination: InterView(),
-                        label: {
-                            Text("I'm new")
-                        })
-                        .frame(width: 300, height: 75)
-                        .font(.largeTitle)
-                        .accentColor(.black)
-                }
                 
             }
             .navigationBarItems(leading: Image("Logo"))
