@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct LoginView: View {
 
     @State var pin: String = ""
     @State private var isEditing = false
     @State var getResults = false
+    @State var user: UserInfo?
     
     var body: some View {
         NavigationView {
@@ -19,21 +21,37 @@ struct LoginView: View {
                 HStack (alignment: .center) {
                     TextField("PIN", text: $pin) { isEditing in
                         self.isEditing = isEditing
-                    } onCommit: {
-                        
                     }
                     .frame(width: 150.0, height: 50.0)
                     .font(.title)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
-                    .sheet(isPresented: $getResults, content: {
-                        ResultView()
-                            .pinForLogin(pin)
-                    })
 
                     
                     ButtonRect("I have PIN", width: 200, height: 50) {
-                        getResults = true
+                        let requestURL = url.appendingPathComponent("users/\(pin)")
+                        AF.request(requestURL)
+                            .responseData { response in
+                                guard let data = response.data else {
+                                    return
+                                }
+                                let decoder = JSONDecoder()
+
+                                do {
+                                    let array = try decoder.decode([UserInfo].self, from: data)
+                                    user = array.first!
+                                    print(type(of: user!.info))
+                                    getResults = true
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            }
+                    }
+                    .sheet(item: $user) { [pin] user in
+                        NavigationView {
+                            ResultView(pin: pin)
+                                .environment(\.userInfo, user)
+                        }
                     }
                 }
                 .frame(width: 400, height: 75, alignment: .center)
@@ -41,11 +59,11 @@ struct LoginView: View {
                 Spacer()
                 
             }
-            .navigationBarItems(leading: Image("Logo"))
+            .navigationBarItems(leading: HStack {
+                Image("logov3")
+            })
             .padding()
         }
-        
-        
     }
 }
 

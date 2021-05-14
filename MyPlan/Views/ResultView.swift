@@ -10,66 +10,64 @@ import Alamofire
 
 struct ResultView: View {
     
-    @State var user: UserInfo?
-    @Environment(\.pinForLogin) var pin
+    @Environment(\.userInfo) var user
+    var pin: String
+    @Environment(\.presentationMode) var presentationMode
     
-    var body: some View {
-        getRequest()
-        return VStack {
-            if let user = user {
-                Text(user.username)
-                Text(user.survey)
-            }
-        }
+    init(pin: String) {
+        self.pin = pin
     }
     
-    func getRequest() {
-        if user == nil {
-            let requestURL = url.appendingPathComponent("users/\(pin)")
-            AF.request(requestURL)
-                .responseData { response in
-                    guard let data = response.data else {
-                        return
-                    }
-                    let decoder = JSONDecoder()
+    var body: some View {
+        VStack(alignment: .leading) {
+
+            HStack {
+                Image("logov3")
+                Spacer()
+                HStack(spacing: 15) {
+                    Text(pin)
                     
-                    do {
-                        let array = try decoder.decode([UserInfo].self, from: data)
-                        user = array.first!
-                        print(user)
-                    } catch {
-                        print(error.localizedDescription)
+                    Button {
+                        // Copy here
+                    } label: {
+                        Image(systemName: "doc.on.doc")
+                            .imageScale(.medium)
                     }
+                    .foregroundColor(.black)
                 }
+                .padding([.leading, .trailing], 14)
+                .frame(height: 50)
+                .background(Color(red: 0.95, green: 0.95, blue: 0.95))
+                .cornerRadius(10)
+                
+                Spacer()
+                Button {
+                    // share here
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .imageScale(.large)
+                }
+                .foregroundColor(.black)
+            }
+            .font(.custom("Gilroy", size: 20))
+            .padding()
+            ScrollView {
+                Text("")
+            }
         }
+        .navigationBarItems(
+            trailing: Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("Close")
+            }
+        )
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView()
+        ResultView(pin: "19A 23 32")
     }
 }
-
-
-//do {
-//    var array = try JSONDecoder().decode(Array<UserInfo>.self, from: jsonString.data(using: .utf8)!)
-//
-//    for elem in array {
-//        print(elem._id)
-//        print(elem.username)
-//        print(elem.survey)
-//        print("Tests:")
-//        if let tests = elem.tests {
-//            for test in tests {
-//                print(test._id)
-//                print(test.anchor)
-//                print(test.description)
-//                print(test.years ?? "nil")
-//            }
-//        }
-//        print("=======================")
-//    }
-//} catch {
-//    print(error.localizedDescription)
-//}
