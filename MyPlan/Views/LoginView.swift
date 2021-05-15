@@ -13,7 +13,7 @@ struct LoginView: View {
     @State var pin: String = ""
     @State private var isEditing = false
     @State var getResults = false
-    @State var user: UserInfo?
+    @State var user = UserInfo.defaultValue
     
     var body: some View {
         NavigationView {
@@ -40,19 +40,16 @@ struct LoginView: View {
                                 do {
                                     let array = try decoder.decode([UserInfo].self, from: data)
                                     user = array.first!
-                                    print(type(of: user!.info))
                                     getResults = true
                                 } catch {
                                     print(error.localizedDescription)
                                 }
                             }
                     }
-                    .sheet(item: $user) { [pin] user in
-                        NavigationView {
-                            ResultView(pin: pin)
-                                .environment(\.userInfo, user)
-                        }
-                    }
+                    .sheet(isPresented: $getResults, content: { [user, pin] in
+                        ResultView(pin: pin)
+                            .environment(\.userInfo, user)
+                    })
                 }
                 .frame(width: 400, height: 75, alignment: .center)
                 

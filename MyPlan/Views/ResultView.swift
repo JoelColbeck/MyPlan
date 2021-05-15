@@ -51,9 +51,9 @@ struct ResultView: View {
             }
             .font(.custom("Gilroy", size: 20))
             .padding()
-            ScrollView {
-                Text("")
-            }
+            
+            YearListView()
+                .environment(\.userInfo, user)
         }
         .navigationBarItems(
             trailing: Button {

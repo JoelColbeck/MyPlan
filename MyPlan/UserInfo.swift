@@ -24,9 +24,9 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
         let years: [Int]
     }
     
-    var info: [String: Codable] {
+    var info: [String: String] {
         get {
-            var info: [String: Codable] = [:]
+            var info: [String: String] = [:]
             
             do {
                 var result = try JSONSerialization.jsonObject(with: survey.data(using: .utf8)!, options: .mutableContainers)
@@ -49,6 +49,23 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
             Int(createdAt.prefix(4)) ?? 0
         }
     }
+    
+    var arrayOfYears: [Int] {
+        var setOfYears: Set<Int> = []
+        for test in tests {
+            setOfYears = setOfYears.union(test.years)
+        }
+        
+        var resultArray: [Int] = []
+        for year in setOfYears {
+            resultArray.append(year)
+        }
+        
+        resultArray.sort(by: <)
+        print(resultArray)
+        return resultArray
+    }
+    
 }
 
 extension EnvironmentValues {
