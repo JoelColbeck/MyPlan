@@ -9,13 +9,50 @@ import SwiftUI
 
 struct YearListView: View {
     @Environment(\.userInfo) var user
+    var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        
+        return dateFormatter
+    }
     
     var body: some View {
         List {
             ForEach(user.arrayOfYears, id: \.self) { year in
-                Text("\(year)")
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text("\(calculateAgeForTest(year))")
+                            .font(.title2)
+                            .bold()
+                        
+                        Text("\(String(year))")
+                            .opacity(0.4)
+                    }
+                }
             }
         }
+    }
+    
+    private func calculateAgeForTest(_ year: Int) -> String {
+        var result = ""
+        
+        let createdAtYear = user.createdAtYear
+        let age = Int(user.info["age"] as! String)!
+        
+        result = String(year - createdAtYear + age)
+        
+        switch result.last! {
+        case "1":
+            result += " год"
+        case "2", "3", "4":
+            result += " года"
+        case "0", "5", "6", "7", "8", "9":
+            result += " лет"
+        default:
+            break
+        }
+        
+        return result
     }
 }
 

@@ -24,19 +24,21 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
         let years: [Int]
     }
     
-    var info: [String: String] {
-        get {
-            var info: [String: String] = [:]
+    var info: [String: Any] {
+        var info: [String: Any] = [:]
+        
+        do {
+            let result = try JSONSerialization
+                .jsonObject(with: survey.data(using: .utf8)!,
+                            options: .mutableContainers) as! NSDictionary
             
-            do {
-                var result = try JSONSerialization.jsonObject(with: survey.data(using: .utf8)!, options: .mutableContainers)
-                print(result)
-            } catch {
-                print(error.localizedDescription)
-            }
+            info = result as? Dictionary<String, Any> ?? [:]
             
-            return info
+        } catch {
+            print(error.localizedDescription)
         }
+        
+        return info
     }
     
     let _id: String
@@ -62,7 +64,6 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
         }
         
         resultArray.sort(by: <)
-        print(resultArray)
         return resultArray
     }
     
