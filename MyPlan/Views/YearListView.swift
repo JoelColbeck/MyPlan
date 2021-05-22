@@ -28,6 +28,14 @@ struct YearListView: View {
                         Text("\(String(year))")
                             .opacity(0.4)
                     }
+                    
+                    ForEach(user.tests, id: \.self) { test in
+                        if test.years.contains(year) {
+                            VStack {
+                                
+                            }
+                        }
+                    }
                 }
             }
         }

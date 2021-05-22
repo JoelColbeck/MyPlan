@@ -17,12 +17,23 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
     
     static var preview = UserInfo(_id: "Some id", username: "Username", survey: "Survey", tests: [], createdAt: "Somewhere")
     
-    struct TestInfo: Codable {
-        let _id: String
-        let testAnchor: String
-        let description: String?
-        let years: [Int]
+    static var testAnchorInfo: [TestAnchorInfo]? {
+        let decoder = JSONDecoder()
+        
+        let json = try! String(contentsOfFile: "/Users/joelcolbeck/Work/GeorgeProjects/MyPlan/MyPlan/testAnchor.json")
+        
+        let data = json.data(using: .utf8)!
+        
+        do {
+            let result = try decoder.decode([TestAnchorInfo].self, from: data)
+            return result
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return nil
     }
+    
     
     var info: [String: Any] {
         var info: [String: Any] = [:]
@@ -65,6 +76,32 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
         
         resultArray.sort(by: <)
         return resultArray
+    }
+    
+    struct TestInfo: Codable, Hashable {
+        let _id: String
+        let testAnchor: String
+        let years: [Int]
+        
+    }
+    
+    struct TestAnchorInfo: Codable {
+        var testAnchor: String
+        var testName: String
+        var category: String
+        var description: String
+        var importance: String
+        
+        var _importance: Importance {
+            Importance(rawValue: importance) ?? .none
+        }
+        
+        enum Importance: String {
+            case high = "importanceHigh"
+            case medium = "importanceMedium"
+            case low = "importanceLow"
+            case none = "None"
+        }
     }
     
 }
