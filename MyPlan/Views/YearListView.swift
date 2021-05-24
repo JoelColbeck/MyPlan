@@ -32,7 +32,7 @@ struct YearListView: View {
                     ForEach(user.tests, id: \.self) { test in
                         if test.years.contains(year) {
                             VStack {
-                                
+                                TestAnchorView()
                             }
                         }
                     }
