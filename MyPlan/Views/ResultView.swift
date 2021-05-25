@@ -13,6 +13,7 @@ struct ResultView: View {
     @Environment(\.userInfo) var user
     var pin: String
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     
     init(pin: String) {
         self.pin = pin
@@ -44,6 +45,7 @@ struct ResultView: View {
                     }
                     .foregroundColor(.black)
                 }
+                .colorScheme(.light)
                 .padding([.leading, .trailing], 14)
                 .frame(height: 50)
                 .background(Color(red: 0.95, green: 0.95, blue: 0.95))
@@ -78,5 +80,6 @@ struct ResultView: View {
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView(pin: "19A 23 32")
+            
     }
 }

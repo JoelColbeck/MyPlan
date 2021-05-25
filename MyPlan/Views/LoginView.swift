@@ -48,6 +48,7 @@ struct LoginView: View {
                     }
                     .sheet(isPresented: $getResults, content: { [user, pin] in
                         ResultView(pin: pin)
+                            .colorScheme(.light)
                             .environment(\.userInfo, user)
                     })
                 }
