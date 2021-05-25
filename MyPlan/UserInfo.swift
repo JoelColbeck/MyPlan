@@ -15,7 +15,15 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
     
     static var defaultValue = Self.preview
     
-    static var preview = UserInfo(_id: "Some id", username: "Username", survey: "Survey", tests: [], createdAt: "Somewhere")
+    static var preview = UserInfo(
+        _id: "Some id",
+        username: "Username",
+        survey: "{\"gender\":\"woman\",\"age\":\"45\",\"weight\":110,\"height\":180,\"smoking-question\":\"smokingNow\",\"question3\":\"heavyDrinker\",\"bloodPressureTop\":150,\"bloodPressureLow\":90,\"high cholesterol\":[\"yes\"],\"diabetes\":[\"yes\"],\"colonCancerWoman\":[\"true\"],\"lungsCancerWoman\":[\"true\"],\"melanomaWoman\":[\"true\"],\"cervicalCancerWoman\":[\"true\"],\"colonCancerDetails\":\"lessthan60\",\"bmi\":33.95061728395061}",
+        tests: [
+            .init(_id: "0", testAnchor: "cholesterolTest", years: [2023, 2024]),
+            .init(_id: "1", testAnchor: "hiv", years: [2023, 2025])
+        ],
+        createdAt: "2021")
     
     var info: [String: Any] {
         var info: [String: Any] = [:]
@@ -61,27 +69,32 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
     }
     
     struct TestInfo: Codable, Hashable {
+        static var preview: TestInfo = .init(_id: "0", testAnchor: "cholesterolTest", years: [])
+        
         let _id: String
         let testAnchor: String
         let years: [Int]
         
     }
     
-    static var testAnchorInfo: [TestAnchorInfo]? {
+    static var testAnchorInfo: [TestAnchorInfo] {
         let decoder = JSONDecoder()
         
         let json = try! String(contentsOfFile: "/Users/joelcolbeck/Work/GeorgeProjects/MyPlan/MyPlan/testAnchor.json")
         
         let data = json.data(using: .utf8)!
         
-        do {
-            let result = try decoder.decode([TestAnchorInfo].self, from: data)
-            return result
-        } catch {
-            print(error.localizedDescription)
-        }
+        let result = try! decoder.decode([TestAnchorInfo].self, from: data)
+        return result
         
-        return nil
+    }
+    
+    static func getTestAnchorInfo(testAnchor: String) -> TestAnchorInfo {
+        let info = testAnchorInfo.filter({ info in
+            return info.testAnchor == testAnchor
+        })
+        
+        return info.first!
     }
     
     struct TestAnchorInfo: Codable {
@@ -97,7 +110,7 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
         
         enum Importance: String {
             case high = "importanceHigh"
-            case medium = "importanceMedium"
+            case medium = "importanceMed"
             case low = "importanceLow"
             case none = "None"
         }

@@ -28,14 +28,16 @@ struct YearListView: View {
                         Text("\(String(year))")
                             .opacity(0.4)
                     }
+                    .frame(width: 90, height: 50, alignment: .topLeading)
                     
-                    ForEach(user.tests, id: \.self) { test in
-                        if test.years.contains(year) {
-                            VStack {
-                                TestAnchorView()
+                    VStack(alignment: .leading, spacing: 30) {
+                        ForEach(user.tests, id: \.self) { test in
+                            if test.years.contains(year) {
+                                TestAnchorView(testAnchor: test.testAnchor)
                             }
                         }
                     }
+                    
                 }
             }
         }
@@ -67,5 +69,6 @@ struct YearListView: View {
 struct YearListView_Previews: PreviewProvider {
     static var previews: some View {
         YearListView()
+            .environment(\.userInfo, UserInfo.preview)
     }
 }

@@ -20,7 +20,16 @@ struct ResultView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-
+            HStack {
+                Spacer()
+                Color(.gray)
+                    .frame(width: 50, height: 7)
+                    .opacity(0.5)
+                    .cornerRadius(5)
+                Spacer()
+            }
+            .padding(.bottom, -10)
+            .padding(.top, 10)
             HStack {
                 Image("logov3")
                 Spacer()
