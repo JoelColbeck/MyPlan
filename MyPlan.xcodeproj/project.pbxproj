@@ -16,6 +16,7 @@
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
 		C7DCF38A26357DBB00551D4D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38926357DBB00551D4D /* ResultView.swift */; };
 		C7DCF38E2635821600551D4D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38D2635821600551D4D /* UserInfo.swift */; };
+		C7E264E0265CD07A00B51140 /* TestAnchorJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E264DF265CD07A00B51140 /* TestAnchorJSON.swift */; };
 		C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F3FFA22607482800A63326 /* MyPlanApp.swift */; };
 		C7F3FFA52607482800A63326 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F3FFA42607482800A63326 /* ContentView.swift */; };
 		C7F3FFA72607482900A63326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F3FFA62607482900A63326 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
 		C7DCF38926357DBB00551D4D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		C7DCF38D2635821600551D4D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C7E264DF265CD07A00B51140 /* TestAnchorJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorJSON.swift; sourceTree = "<group>"; };
 		C7F3FF9F2607482800A63326 /* MyPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F3FFA22607482800A63326 /* MyPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanApp.swift; sourceTree = "<group>"; };
 		C7F3FFA42607482800A63326 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C7F3FFB22607492600A63326 /* Views */,
 				C7DCF38D2635821600551D4D /* UserInfo.swift */,
 				C7F3FFA22607482800A63326 /* MyPlanApp.swift */,
+				C7E264DF265CD07A00B51140 /* TestAnchorJSON.swift */,
 				C7F3FFA62607482900A63326 /* Assets.xcassets */,
 				C7F3FFAB2607482900A63326 /* Info.plist */,
 				C7F3FFA82607482900A63326 /* Preview Content */,
@@ -248,6 +251,7 @@
 				C716E28C264EF64500A562B7 /* YearListView.swift in Sources */,
 				C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */,
 				C7DCF38E2635821600551D4D /* UserInfo.swift in Sources */,
+				C7E264E0265CD07A00B51140 /* TestAnchorJSON.swift in Sources */,
 				C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +391,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.basharslanaliev.MyChecklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -411,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.basharslanaliev.MyChecklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

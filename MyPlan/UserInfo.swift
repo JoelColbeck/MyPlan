@@ -80,9 +80,9 @@ struct UserInfo: Codable, Identifiable, EnvironmentKey {
     static var testAnchorInfo: [TestAnchorInfo] {
         let decoder = JSONDecoder()
         
-        let json = try! String(contentsOfFile: "/Users/joelcolbeck/Work/GeorgeProjects/MyPlan/MyPlan/testAnchor.json")
+//        let json = try! String(contentsOfFile: "testAnchor.json")
         
-        let data = json.data(using: .utf8)!
+        let data = testAnchorJSON.data(using: .utf8)!
         
         let result = try! decoder.decode([TestAnchorInfo].self, from: data)
         return result
