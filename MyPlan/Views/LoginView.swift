@@ -49,17 +49,24 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                Button {
-                    
-                } label: {
-                    Text("I'm new")
-                        .font(.title)
-                        .padding([.leading, .trailing], 15)
-                        .padding([.top, .bottom], 5)
-                        .foregroundColor(.black)
-                        .background(Color.yellow)
-                        .cornerRadius(10)
-                }
+//                Button {
+//
+//                } label: {
+//                    Text("I'm new")
+//                        .font(.title)
+//                        .padding([.leading, .trailing], 15)
+//                        .padding([.top, .bottom], 5)
+//                        .foregroundColor(.black)
+//                        .background(Color.yellow)
+//                        .cornerRadius(10)
+//                }
+                NavigationLink("I'm new", destination: SurveyView())
+                    .font(.title)
+                    .padding([.leading, .trailing], 15)
+                    .padding([.top, .bottom], 5)
+                    .foregroundColor(.black)
+                    .background(Color.yellow)
+                    .cornerRadius(10)
             }
             .navigationBarItems(leading: HStack {
                 Image("logov3")
