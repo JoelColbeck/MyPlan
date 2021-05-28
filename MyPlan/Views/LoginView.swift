@@ -33,12 +33,12 @@ struct LoginView: View {
                     } label: {
                         Text("I have pin")
                             .font(.title)
+                            .padding([.leading, .trailing], 15)
+                            .padding([.top, .bottom], 5)
+                            .foregroundColor(.black)
+                            .background(Color.yellow)
+                            .cornerRadius(10)
                     }
-                    .padding([.leading, .trailing], 15)
-                    .padding([.top, .bottom], 5)
-                    .foregroundColor(.black)
-                    .background(Color.yellow)
-                    .cornerRadius(10)
                     .sheet(isPresented: $getResults, content: { [user, pin] in
                         ResultView(pin: pin)
                             .colorScheme(.light)
@@ -49,6 +49,17 @@ struct LoginView: View {
                 
                 Spacer()
                 
+                Button {
+                    
+                } label: {
+                    Text("I'm new")
+                        .font(.title)
+                        .padding([.leading, .trailing], 15)
+                        .padding([.top, .bottom], 5)
+                        .foregroundColor(.black)
+                        .background(Color.yellow)
+                        .cornerRadius(10)
+                }
             }
             .navigationBarItems(leading: HStack {
                 Image("logov3")
