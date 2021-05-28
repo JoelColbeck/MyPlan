@@ -28,7 +28,7 @@ struct ButtonRect: View {
         ZStack {
             Color.init(red: 1.0, green: 0.90196, blue: 0).frame(width: width, height: height, alignment: .center)
                 .cornerRadius(10)
-//                .shadow(color: .black, radius: 0, x: 0, y: 0)
+
             
             Button(buttonText, action: buttonAction)
                 .font(.title)

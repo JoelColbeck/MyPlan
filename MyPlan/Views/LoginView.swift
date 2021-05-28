@@ -28,24 +28,17 @@ struct LoginView: View {
                     .keyboardType(.numberPad)
 
                     
-                    ButtonRect("I have PIN", width: 200, height: 50) {
-                        let requestURL = url.appendingPathComponent("users/\(pin)")
-                        AF.request(requestURL)
-                            .responseData { response in
-                                guard let data = response.data else {
-                                    return
-                                }
-                                let decoder = JSONDecoder()
-
-                                do {
-                                    let array = try decoder.decode([UserInfo].self, from: data)
-                                    user = array.first!
-                                    getResults = true
-                                } catch {
-                                    print(error.localizedDescription)
-                                }
-                            }
+                    Button {
+                        sendRequest()
+                    } label: {
+                        Text("I have pin")
+                            .font(.title)
                     }
+                    .padding([.leading, .trailing], 15)
+                    .padding([.top, .bottom], 5)
+                    .foregroundColor(.black)
+                    .background(Color.yellow)
+                    .cornerRadius(10)
                     .sheet(isPresented: $getResults, content: { [user, pin] in
                         ResultView(pin: pin)
                             .colorScheme(.light)
@@ -62,6 +55,25 @@ struct LoginView: View {
             })
             .padding()
         }
+    }
+    
+    private func sendRequest() {
+        let requestURL = url.appendingPathComponent("users/\(pin)")
+        AF.request(requestURL)
+            .responseData { response in
+                guard let data = response.data else {
+                    return
+                }
+                let decoder = JSONDecoder()
+
+                do {
+                    let array = try decoder.decode([UserInfo].self, from: data)
+                    user = array.first!
+                    getResults = true
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
     }
 }
 

@@ -10,7 +10,6 @@
 		96A7D8DB004E6F44145CC6CF /* Pods_MyPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809E195E58DA1CE6AA9E3EC /* Pods_MyPlan.framework */; };
 		C716E28C264EF64500A562B7 /* YearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716E28B264EF64500A562B7 /* YearListView.swift */; };
 		C74A011E26075AE0009950CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A011D26075AE0009950CA /* LoginView.swift */; };
-		C7B550BC26077A3C00581093 /* ButtonRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B550BB26077A3C00581093 /* ButtonRect.swift */; };
 		C7B7267326582F1400D21933 /* testAnchor.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B7267226582F1400D21933 /* testAnchor.json */; };
 		C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B726742658E35C00D21933 /* TestAnchorView.swift */; };
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
@@ -28,7 +27,6 @@
 		7D7E2E3C2047404343E5607A /* Pods-MyPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.debug.xcconfig"; path = "Target Support Files/Pods-MyPlan/Pods-MyPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		C716E28B264EF64500A562B7 /* YearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListView.swift; sourceTree = "<group>"; };
 		C74A011D26075AE0009950CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		C7B550BB26077A3C00581093 /* ButtonRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRect.swift; sourceTree = "<group>"; };
 		C7B7267226582F1400D21933 /* testAnchor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testAnchor.json; sourceTree = "<group>"; };
 		C7B726742658E35C00D21933 /* TestAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorView.swift; sourceTree = "<group>"; };
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			children = (
 				C7F3FFA42607482800A63326 /* ContentView.swift */,
 				C74A011D26075AE0009950CA /* LoginView.swift */,
-				C7B550BB26077A3C00581093 /* ButtonRect.swift */,
 				C7DCF38926357DBB00551D4D /* ResultView.swift */,
 				C716E28B264EF64500A562B7 /* YearListView.swift */,
 				C7B726742658E35C00D21933 /* TestAnchorView.swift */,
@@ -246,7 +243,6 @@
 				C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */,
 				C74A011E26075AE0009950CA /* LoginView.swift in Sources */,
 				C7F3FFA52607482800A63326 /* ContentView.swift in Sources */,
-				C7B550BC26077A3C00581093 /* ButtonRect.swift in Sources */,
 				C7DCF38A26357DBB00551D4D /* ResultView.swift in Sources */,
 				C716E28C264EF64500A562B7 /* YearListView.swift in Sources */,
 				C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */,
