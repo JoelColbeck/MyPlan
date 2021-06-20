@@ -10,9 +10,7 @@
 		96A7D8DB004E6F44145CC6CF /* Pods_MyPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809E195E58DA1CE6AA9E3EC /* Pods_MyPlan.framework */; };
 		C716E28C264EF64500A562B7 /* YearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716E28B264EF64500A562B7 /* YearListView.swift */; };
 		C74A011E26075AE0009950CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A011D26075AE0009950CA /* LoginView.swift */; };
-		C799FE88266115A20068B0D2 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799FE87266115A20068B0D2 /* SurveyView.swift */; };
-		C799FE8B266116330068B0D2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799FE8A266116330068B0D2 /* PageViewController.swift */; };
-		C799FE8D266118480068B0D2 /* SurveyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799FE8C266118480068B0D2 /* SurveyPageView.swift */; };
+		C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992D9E267F429D008115C8 /* LoginViewModel.swift */; };
 		C7B7267326582F1400D21933 /* testAnchor.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B7267226582F1400D21933 /* testAnchor.json */; };
 		C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B726742658E35C00D21933 /* TestAnchorView.swift */; };
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
@@ -30,9 +28,7 @@
 		7D7E2E3C2047404343E5607A /* Pods-MyPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.debug.xcconfig"; path = "Target Support Files/Pods-MyPlan/Pods-MyPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		C716E28B264EF64500A562B7 /* YearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListView.swift; sourceTree = "<group>"; };
 		C74A011D26075AE0009950CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		C799FE87266115A20068B0D2 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
-		C799FE8A266116330068B0D2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C799FE8C266118480068B0D2 /* SurveyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPageView.swift; sourceTree = "<group>"; };
+		C7992D9E267F429D008115C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C7B7267226582F1400D21933 /* testAnchor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testAnchor.json; sourceTree = "<group>"; };
 		C7B726742658E35C00D21933 /* TestAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorView.swift; sourceTree = "<group>"; };
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
@@ -77,6 +73,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C7992D9D267F4296008115C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C74A011D26075AE0009950CA /* LoginView.swift */,
+				C7992D9E267F429D008115C8 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		C799FE862661158A0068B0D2 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,16 +90,6 @@
 				C7B726742658E35C00D21933 /* TestAnchorView.swift */,
 			);
 			path = Result;
-			sourceTree = "<group>";
-		};
-		C799FE892661160E0068B0D2 /* Survey */ = {
-			isa = PBXGroup;
-			children = (
-				C799FE8A266116330068B0D2 /* PageViewController.swift */,
-				C799FE87266115A20068B0D2 /* SurveyView.swift */,
-				C799FE8C266118480068B0D2 /* SurveyPageView.swift */,
-			);
-			path = Survey;
 			sourceTree = "<group>";
 		};
 		C7F3FF962607482800A63326 = {
@@ -143,9 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				C7F3FFA42607482800A63326 /* ContentView.swift */,
-				C74A011D26075AE0009950CA /* LoginView.swift */,
+				C7992D9D267F4296008115C8 /* Login */,
 				C799FE862661158A0068B0D2 /* Result */,
-				C799FE892661160E0068B0D2 /* Survey */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,16 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */,
-				C799FE8D266118480068B0D2 /* SurveyPageView.swift in Sources */,
 				C74A011E26075AE0009950CA /* LoginView.swift in Sources */,
-				C799FE8B266116330068B0D2 /* PageViewController.swift in Sources */,
 				C7F3FFA52607482800A63326 /* ContentView.swift in Sources */,
 				C7DCF38A26357DBB00551D4D /* ResultView.swift in Sources */,
 				C716E28C264EF64500A562B7 /* YearListView.swift in Sources */,
 				C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */,
 				C7DCF38E2635821600551D4D /* UserInfo.swift in Sources */,
 				C7E264E0265CD07A00B51140 /* TestAnchorJSON.swift in Sources */,
-				C799FE88266115A20068B0D2 /* SurveyView.swift in Sources */,
+				C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */,
 				C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
