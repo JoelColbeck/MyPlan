@@ -64,7 +64,7 @@ struct ResultView: View {
             .padding()
             
             YearListView()
-                .environment(\.userInfo, user)
+                .environmentObject(YearListViewModel(user: user))
         }
         .navigationBarItems(
             trailing: Button {

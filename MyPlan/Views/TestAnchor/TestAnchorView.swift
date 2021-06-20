@@ -12,6 +12,7 @@ struct TestAnchorView: View {
     var testInfo: UserInfo.TestAnchorInfo {
         UserInfo.getTestAnchorInfo(testAnchor: testAnchor)
     }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(testInfo.testName)

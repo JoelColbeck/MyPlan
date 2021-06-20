@@ -11,6 +11,8 @@
 		C716E28C264EF64500A562B7 /* YearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716E28B264EF64500A562B7 /* YearListView.swift */; };
 		C74A011E26075AE0009950CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A011D26075AE0009950CA /* LoginView.swift */; };
 		C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992D9E267F429D008115C8 /* LoginViewModel.swift */; };
+		C7992DA2267F456C008115C8 /* YearListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA1267F456C008115C8 /* YearListViewModel.swift */; };
+		C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */; };
 		C7B7267326582F1400D21933 /* testAnchor.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B7267226582F1400D21933 /* testAnchor.json */; };
 		C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B726742658E35C00D21933 /* TestAnchorView.swift */; };
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
@@ -29,6 +31,8 @@
 		C716E28B264EF64500A562B7 /* YearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListView.swift; sourceTree = "<group>"; };
 		C74A011D26075AE0009950CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C7992D9E267F429D008115C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C7992DA1267F456C008115C8 /* YearListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListViewModel.swift; sourceTree = "<group>"; };
+		C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorViewModel.swift; sourceTree = "<group>"; };
 		C7B7267226582F1400D21933 /* testAnchor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testAnchor.json; sourceTree = "<group>"; };
 		C7B726742658E35C00D21933 /* TestAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorView.swift; sourceTree = "<group>"; };
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
@@ -82,12 +86,28 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C7992DA0267F455E008115C8 /* YearList */ = {
+			isa = PBXGroup;
+			children = (
+				C716E28B264EF64500A562B7 /* YearListView.swift */,
+				C7992DA1267F456C008115C8 /* YearListViewModel.swift */,
+			);
+			path = YearList;
+			sourceTree = "<group>";
+		};
+		C7992DA3267F4C8B008115C8 /* TestAnchor */ = {
+			isa = PBXGroup;
+			children = (
+				C7B726742658E35C00D21933 /* TestAnchorView.swift */,
+				C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */,
+			);
+			path = TestAnchor;
+			sourceTree = "<group>";
+		};
 		C799FE862661158A0068B0D2 /* Result */ = {
 			isa = PBXGroup;
 			children = (
 				C7DCF38926357DBB00551D4D /* ResultView.swift */,
-				C716E28B264EF64500A562B7 /* YearListView.swift */,
-				C7B726742658E35C00D21933 /* TestAnchorView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -140,6 +160,8 @@
 				C7F3FFA42607482800A63326 /* ContentView.swift */,
 				C7992D9D267F4296008115C8 /* Login */,
 				C799FE862661158A0068B0D2 /* Result */,
+				C7992DA0267F455E008115C8 /* YearList */,
+				C7992DA3267F4C8B008115C8 /* TestAnchor */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +291,8 @@
 				C7E264E0265CD07A00B51140 /* TestAnchorJSON.swift in Sources */,
 				C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */,
 				C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */,
+				C7992DA2267F456C008115C8 /* YearListViewModel.swift in Sources */,
+				C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

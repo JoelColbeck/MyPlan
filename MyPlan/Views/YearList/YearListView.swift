@@ -8,20 +8,14 @@
 import SwiftUI
 
 struct YearListView: View {
-    @Environment(\.userInfo) var user
-    var dateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        
-        return dateFormatter
-    }
+    @EnvironmentObject var viewModel: YearListViewModel
     
     var body: some View {
         List {
-            ForEach(user.arrayOfYears, id: \.self) { year in
+            ForEach(viewModel.getArrayOfYears(), id: \.self) { year in
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text("\(calculateAgeForTest(year))")
+                        Text("\(viewModel.calculateAgeForTest(year))")
                             .font(.title2)
                             .bold()
                         
@@ -31,7 +25,7 @@ struct YearListView: View {
                     .frame(width: 90, height: 50, alignment: .topLeading)
                     
                     VStack(alignment: .leading, spacing: 30) {
-                        ForEach(user.tests, id: \.self) { test in
+                        ForEach(viewModel.getTests(), id: \.self) { test in
                             if test.years.contains(year) {
                                 TestAnchorView(testAnchor: test.testAnchor)
                             }
@@ -43,32 +37,13 @@ struct YearListView: View {
         }
     }
     
-    private func calculateAgeForTest(_ year: Int) -> String {
-        var result = ""
-        
-        let createdAtYear = user.createdAtYear
-        let age = Int(user.info["age"] as! String)!
-        
-        result = String(year - createdAtYear + age)
-        
-        switch result.last! {
-        case "1":
-            result += " год"
-        case "2", "3", "4":
-            result += " года"
-        case "0", "5", "6", "7", "8", "9":
-            result += " лет"
-        default:
-            break
-        }
-        
-        return result
-    }
+    
 }
 
 struct YearListView_Previews: PreviewProvider {
     static var previews: some View {
         YearListView()
             .environment(\.userInfo, UserInfo.preview)
+            .environmentObject(YearListViewModel(user: UserInfo.preview))
     }
 }
