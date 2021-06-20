@@ -8,39 +8,22 @@
 import SwiftUI
 
 struct TestAnchorView: View {
-    var testAnchor: String
-    var testInfo: UserInfo.TestAnchorInfo {
-        UserInfo.getTestAnchorInfo(testAnchor: testAnchor)
-    }
+    @EnvironmentObject var viewModel: TestAnchorViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(testInfo.testName)
+            Text(viewModel.getTestName())
             HStack {
-                Text(testInfo.category)
-                Text(getTestInfoImportance())
+                Text(viewModel.getTestCategory())
+                Text(viewModel.getTestInfoImportance())
             }
         }
-    }
-    
-    private func getTestInfoImportance() -> String{
-        var result = ""
-        switch testInfo._importance {
-        case .high:
-            result = "!!! Важно"
-        case .medium:
-            result = "!! Cтоит сделать"
-        case .low:
-            result = "! На усмотрение"
-        default:
-            result = ""
-        }
-        return result
     }
 }
 
 struct TestAnchorView_Previews: PreviewProvider {
     static var previews: some View {
-        TestAnchorView(testAnchor: "cholesterolTest")
+        TestAnchorView()
+            .environmentObject(TestAnchorViewModel(testAnchor: "cholesterolTest"))
     }
 }

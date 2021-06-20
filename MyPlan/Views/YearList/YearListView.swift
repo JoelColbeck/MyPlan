@@ -27,7 +27,8 @@ struct YearListView: View {
                     VStack(alignment: .leading, spacing: 30) {
                         ForEach(viewModel.getTests(), id: \.self) { test in
                             if test.years.contains(year) {
-                                TestAnchorView(testAnchor: test.testAnchor)
+                                TestAnchorView()
+                                    .environmentObject(TestAnchorViewModel(testAnchor: test.testAnchor))
                             }
                         }
                     }
