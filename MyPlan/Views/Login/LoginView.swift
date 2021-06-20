@@ -16,13 +16,11 @@ struct LoginView: View {
         NavigationView {
             VStack(alignment: .center) {
                 HStack (alignment: .center) {
-                    TextField("PIN", text: $viewModel.pin) { isEditing in
-                        viewModel.isEditing = isEditing
-                    }
-                    .frame(width: 150.0, height: 50.0)
-                    .font(.title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.numberPad)
+                    TextField("PIN", text: $viewModel.pin)
+                        .frame(width: 150.0, height: 50.0)
+                        .font(.title)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
                     
                     
                     Button {

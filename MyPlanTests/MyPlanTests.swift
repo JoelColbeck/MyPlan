@@ -42,4 +42,20 @@ class MyPlanTests: XCTestCase {
             XCTAssertEqual(element.value, result)
         }
     }
+    
+    func testGetTestInfoImportance() {
+        
+        let expectedResult: [String: String] = [
+            "cholesterolTest": "!!! Важно",
+            "aoas": "!! Cтоит сделать",
+            "CT-l": "! На усмотрение"
+        ]
+        
+        for element in expectedResult {
+            let testAnchorViewModel = TestAnchorViewModel(testAnchor: element.key)
+            let result = testAnchorViewModel.getTestInfoImportance()
+            
+            XCTAssertEqual(element.value, result)
+        }
+    }
 }
