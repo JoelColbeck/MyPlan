@@ -43,7 +43,7 @@ struct ResultView: View {
                         // Copy here
                     } label: {
                         Image(systemName: "doc.on.doc")
-                            .imageScale(.medium)
+                            .imageScale(.small)
                     }
                     .foregroundColor(.black)
                 }
@@ -58,7 +58,8 @@ struct ResultView: View {
                     // share here
                 } label: {
                     Image(systemName: "square.and.arrow.up")
-                        .imageScale(.large)
+                        .imageScale(.medium)
+                        .padding(.trailing, 6)
                 }
                 .foregroundColor(.black)
             }

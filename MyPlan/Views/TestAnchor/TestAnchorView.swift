@@ -15,9 +15,11 @@ struct TestAnchorView: View {
             Text(viewModel.getTestName())
             HStack {
                 Text(viewModel.getTestCategory())
+                    .padding(.trailing, 10)
                 viewModel.getTestImportanceView()
                 Spacer()
             }
+            .font(.custom("Gilroy-Semibold", size: 14))
         }
         .font(.custom("Gilroy-Semibold", size: 16))
     }

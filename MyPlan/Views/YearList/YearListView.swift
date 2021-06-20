@@ -35,6 +35,19 @@ struct YearListView: View {
                             }
                         }
                     }
+                    
+                    Spacer()
+                    
+                    Button {
+                        // Add tests to calendar here
+                    } label: {
+                        Image(systemName: "calendar.badge.plus")
+                            .imageScale(.large)
+                    }
+                    .padding(.trailing, 2)
+                    .buttonStyle(BorderlessButtonStyle())
+                    .foregroundColor(.black)
+                    
                 }
                 .padding([.bottom, .top], 15)
                 
@@ -42,8 +55,6 @@ struct YearListView: View {
         }
         .padding(.leading, 10)
     }
-    
-    
 }
 
 struct YearListView_Previews: PreviewProvider {
