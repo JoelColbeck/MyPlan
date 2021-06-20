@@ -11,15 +11,15 @@ struct TestAnchorView: View {
     @EnvironmentObject var viewModel: TestAnchorViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(viewModel.getTestName())
             HStack {
                 Text(viewModel.getTestCategory())
-                    .frame(width: 110, alignment: .leading)
                 viewModel.getTestImportanceView()
+                Spacer()
             }
-            .font(.system(size: 12))
         }
+        .font(.custom("Gilroy-Semibold", size: 16))
     }
 }
 

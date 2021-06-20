@@ -33,9 +33,11 @@ struct ResultView: View {
             .padding(.top, 10)
             HStack {
                 Image("logov3")
+                    .padding(.leading, 7)
                 Spacer()
                 HStack(spacing: 15) {
                     Text(pin)
+                        .padding(.top, 3)
                     
                     Button {
                         // Copy here
@@ -60,11 +62,13 @@ struct ResultView: View {
                 }
                 .foregroundColor(.black)
             }
-            .font(.custom("Gilroy", size: 20))
+            .font(.custom("Gilroy-Semibold", size: 20))
             .padding()
             
             YearListView()
                 .environmentObject(YearListViewModel(user: user))
+                .font(.custom("Gilroy-Semibold", size: 14))
+                .lineSpacing(3)
         }
         .navigationBarItems(
             trailing: Button {

@@ -16,26 +16,31 @@ struct YearListView: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text("\(viewModel.calculateAgeForTest(year))")
-                            .font(.title2)
-                            .bold()
+                            .font(.custom("Gilroy-Semibold", size: 18))
+                            
                         
                         Text("\(String(year))")
                             .opacity(0.4)
+                            .font(.custom("Gilroy-Semibold", size: 14))
                     }
-                    .frame(width: 90, height: 50, alignment: .topLeading)
-                    Divider()
+                    .frame(width: 70, height: 50, alignment: .topLeading)
+                    
+                    
                     VStack(alignment: .leading, spacing: 30) {
                         ForEach(viewModel.getTests(), id: \.self) { test in
                             if test.years.contains(year) {
                                 TestAnchorView()
                                     .environmentObject(TestAnchorViewModel(testAnchor: test.testAnchor))
+                                    .font(.custom("Gilroy-Semibold", size: 16))
                             }
                         }
                     }
-                    
                 }
+                .padding([.bottom, .top], 15)
+                
             }
         }
+        .padding(.leading, 10)
     }
     
     

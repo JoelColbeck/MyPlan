@@ -15,6 +15,8 @@
 		C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */; };
 		C7992DAD267F4F77008115C8 /* MyPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DAC267F4F77008115C8 /* MyPlanTests.swift */; };
 		C7992DB5267F57D5008115C8 /* TestAnchorImportanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DB4267F57D5008115C8 /* TestAnchorImportanceView.swift */; };
+		C7992DB9267F82B8008115C8 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7992DB7267F82B8008115C8 /* Gilroy-Semibold.ttf */; };
+		C7992DBA267F82B8008115C8 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7992DB8267F82B8008115C8 /* Gilroy-Bold.ttf */; };
 		C7B7267326582F1400D21933 /* testAnchor.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B7267226582F1400D21933 /* testAnchor.json */; };
 		C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B726742658E35C00D21933 /* TestAnchorView.swift */; };
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
@@ -49,6 +51,8 @@
 		C7992DAC267F4F77008115C8 /* MyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanTests.swift; sourceTree = "<group>"; };
 		C7992DAE267F4F77008115C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7992DB4267F57D5008115C8 /* TestAnchorImportanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorImportanceView.swift; sourceTree = "<group>"; };
+		C7992DB7267F82B8008115C8 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		C7992DB8267F82B8008115C8 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		C7B7267226582F1400D21933 /* testAnchor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testAnchor.json; sourceTree = "<group>"; };
 		C7B726742658E35C00D21933 /* TestAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorView.swift; sourceTree = "<group>"; };
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 			path = MyPlanTests;
 			sourceTree = "<group>";
 		};
+		C7992DB6267F82A4008115C8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7992DB8267F82B8008115C8 /* Gilroy-Bold.ttf */,
+				C7992DB7267F82B8008115C8 /* Gilroy-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		C799FE862661158A0068B0D2 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 		C7F3FFA12607482800A63326 /* MyPlan */ = {
 			isa = PBXGroup;
 			children = (
+				C7992DB6267F82A4008115C8 /* Fonts */,
 				C7DCF38526357D0700551D4D /* ServerURL.swift */,
 				C7F3FFB22607492600A63326 /* Views */,
 				C7DCF38D2635821600551D4D /* UserInfo.swift */,
@@ -292,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7B7267326582F1400D21933 /* testAnchor.json in Resources */,
+				C7992DB9267F82B8008115C8 /* Gilroy-Semibold.ttf in Resources */,
+				C7992DBA267F82B8008115C8 /* Gilroy-Bold.ttf in Resources */,
 				C7F3FFAA2607482900A63326 /* Preview Assets.xcassets in Resources */,
 				C7F3FFA72607482900A63326 /* Assets.xcassets in Resources */,
 			);
