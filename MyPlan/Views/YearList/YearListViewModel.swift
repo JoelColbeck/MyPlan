@@ -29,10 +29,8 @@ class YearListViewModel: ObservableObject {
             result += " год"
         case "2", "3", "4":
             result += " года"
-        case "0", "5", "6", "7", "8", "9":
-            result += " лет"
         default:
-            break
+            result += " лет"
         }
         
         return result
