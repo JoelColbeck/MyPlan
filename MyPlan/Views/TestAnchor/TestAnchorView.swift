@@ -15,8 +15,10 @@ struct TestAnchorView: View {
             Text(viewModel.getTestName())
             HStack {
                 Text(viewModel.getTestCategory())
+                    .frame(width: 110, alignment: .leading)
                 viewModel.getTestImportanceView()
             }
+            .font(.system(size: 12))
         }
     }
 }
@@ -24,6 +26,6 @@ struct TestAnchorView: View {
 struct TestAnchorView_Previews: PreviewProvider {
     static var previews: some View {
         TestAnchorView()
-            .environmentObject(TestAnchorViewModel(testAnchor: "cholesterolTest"))
+            .environmentObject(TestAnchorViewModel(testAnchor: "colonoscopy50+"))
     }
 }

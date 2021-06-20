@@ -12,16 +12,25 @@ struct TestAnchorImportanceView: View {
     var importance: UserInfo.TestAnchorInfo.Importance
     
     var body: some View {
-        
-        switch importance {
-        case .high:
-            Label("Важно", image: "importanceHigh")
-        case .medium:
-            Label("Стоит сделать", image: "importanceMedium")
-        case .low:
-            Label("На усмотрение", image: "importanceLow")
-        case .none:
-            Text("none")
+        HStack(alignment: .center){
+            
+            switch importance {
+            case .high:
+                Image("importanceHigh")
+                Text("Важно")
+            //            Label("Важно", image: "importanceHigh")
+            case .medium:
+                Image("importanceMedium")
+                Text("Стоит сделать")
+            //            Label("Стоит сделать", image: "importanceMedium")
+            case .low:
+                Image("importanceLow")
+                Text("По желанию")
+            //            Label("По желанию", image: "importanceLow")
+            case .none:
+                Text("none")
+            }
+            
         }
         
     }

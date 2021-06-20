@@ -23,7 +23,7 @@ struct YearListView: View {
                             .opacity(0.4)
                     }
                     .frame(width: 90, height: 50, alignment: .topLeading)
-                    
+                    Divider()
                     VStack(alignment: .leading, spacing: 30) {
                         ForEach(viewModel.getTests(), id: \.self) { test in
                             if test.years.contains(year) {
