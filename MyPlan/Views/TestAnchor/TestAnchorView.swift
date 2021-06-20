@@ -15,7 +15,7 @@ struct TestAnchorView: View {
             Text(viewModel.getTestName())
             HStack {
                 Text(viewModel.getTestCategory())
-                Text(viewModel.getTestInfoImportance())
+                viewModel.getTestImportanceView()
             }
         }
     }

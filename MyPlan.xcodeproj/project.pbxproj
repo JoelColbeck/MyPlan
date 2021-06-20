@@ -14,6 +14,7 @@
 		C7992DA2267F456C008115C8 /* YearListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA1267F456C008115C8 /* YearListViewModel.swift */; };
 		C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */; };
 		C7992DAD267F4F77008115C8 /* MyPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DAC267F4F77008115C8 /* MyPlanTests.swift */; };
+		C7992DB5267F57D5008115C8 /* TestAnchorImportanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DB4267F57D5008115C8 /* TestAnchorImportanceView.swift */; };
 		C7B7267326582F1400D21933 /* testAnchor.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B7267226582F1400D21933 /* testAnchor.json */; };
 		C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B726742658E35C00D21933 /* TestAnchorView.swift */; };
 		C7DCF38626357D0700551D4D /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DCF38526357D0700551D4D /* ServerURL.swift */; };
@@ -47,6 +48,7 @@
 		C7992DAA267F4F77008115C8 /* MyPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7992DAC267F4F77008115C8 /* MyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanTests.swift; sourceTree = "<group>"; };
 		C7992DAE267F4F77008115C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7992DB4267F57D5008115C8 /* TestAnchorImportanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorImportanceView.swift; sourceTree = "<group>"; };
 		C7B7267226582F1400D21933 /* testAnchor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testAnchor.json; sourceTree = "<group>"; };
 		C7B726742658E35C00D21933 /* TestAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorView.swift; sourceTree = "<group>"; };
 		C7DCF38526357D0700551D4D /* ServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				C7B726742658E35C00D21933 /* TestAnchorView.swift */,
 				C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */,
+				C7992DB4267F57D5008115C8 /* TestAnchorImportanceView.swift */,
 			);
 			path = TestAnchor;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				C7F3FFA32607482800A63326 /* MyPlanApp.swift in Sources */,
 				C7992DA2267F456C008115C8 /* YearListViewModel.swift in Sources */,
 				C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */,
+				C7992DB5267F57D5008115C8 /* TestAnchorImportanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

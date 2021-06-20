@@ -5,7 +5,7 @@
 //  Created by Башир Арсланалиев on 20.06.2021.
 //
 
-import Foundation
+import SwiftUI
 
 
 class TestAnchorViewModel: ObservableObject {
@@ -32,6 +32,10 @@ class TestAnchorViewModel: ObservableObject {
             result = ""
         }
         return result
+    }
+    
+    func getTestImportanceView() -> some View {
+        TestAnchorImportanceView(importance: testInfo._importance)
     }
     
     func getTestName() -> String {
