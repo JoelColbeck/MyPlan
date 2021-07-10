@@ -13,22 +13,25 @@ class LoginViewModel: ObservableObject {
     
     @Published var pin: String = ""
     @Published var isEditing = false
-    @Published var getResults = false
+    @Published var hasResults = false
+    @Published var startTest = false
     @Published var user = UserInfo.defaultValue
+    @Published var didStartGetResults = false
     
     func sendRequest() {
         let requestURL = url.appendingPathComponent("users/\(pin)")
+        didStartGetResults = true
         AF.request(requestURL)
-            .responseData { [self] response in
+            .responseData { [weak self] response in
                 guard let data = response.data else {
                     return
                 }
                 let decoder = JSONDecoder()
-
+                
                 do {
                     let array = try decoder.decode([UserInfo].self, from: data)
-                    user = array.first!
-                    getResults = true
+                    self?.user = array.first!
+                    self?.hasResults = true
                 } catch {
                     print(error.localizedDescription)
                 }

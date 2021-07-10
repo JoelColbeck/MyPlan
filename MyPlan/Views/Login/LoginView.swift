@@ -12,38 +12,81 @@ struct LoginView: View {
     
     @StateObject var viewModel = LoginViewModel()
     
+    @State var pin0 = ""
+    @State var pin1 = ""
+    @State var pin2 = ""
+    @State var pin3 = ""
+    
+    enum Field: Hashable {
+        case first
+        case second
+        case third
+        case fourth
+    }
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
+                Text("Введите ваш пин")
+                    .font(.custom("Gilroy-Semibold", size: 16))
                 HStack (alignment: .center) {
+                    
                     TextField("PIN", text: $viewModel.pin)
                         .frame(width: 150.0, height: 50.0)
-                        .font(.title)
+                        .font(.custom("Gilroy-Semibold", size: 22))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                     
                     
                     Button {
-                        viewModel.sendRequest()
+                        if !viewModel.didStartGetResults {
+                            viewModel.sendRequest()
+                        }
                     } label: {
-                        Text("I have pin")
-                            .font(.title)
-                            .padding([.leading, .trailing], 15)
-                            .padding([.top, .bottom], 5)
-                            .foregroundColor(.black)
-                            .background(Color.yellow)
-                            .cornerRadius(10)
+                        if !viewModel.didStartGetResults && !viewModel.hasResults {
+                            Text("Мой пин")
+                                .padding([.leading, .trailing], 15)
+                                .padding([.top, .bottom], 5)
+                                .foregroundColor(.black)
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                                .font(.custom("Gilroy-Semibold", size: 22))
+                        } else {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                .padding([.leading, .trailing], 15)
+                                .padding([.top, .bottom], 5)
+                                .foregroundColor(.black)
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                                .font(.custom("Gilroy-Semibold", size: 22))
+                        }
                     }
-                    .sheet(isPresented: $viewModel.getResults,
-                           content: {
-                            ResultView(pin: viewModel.pin)
-                                .colorScheme(.light)
-                                .environment(\.userInfo, viewModel.user)
-                           })
+                    
                 }
+                .sheet(isPresented: $viewModel.hasResults,
+                       onDismiss: {
+                        viewModel.hasResults = false
+                        viewModel.didStartGetResults = false
+                       },
+                       content: {
+                        ResultView(pin: viewModel.pin)
+                            .colorScheme(.light)
+                            .environment(\.userInfo, viewModel.user)
+                       })
                 .frame(width: 400, height: 75, alignment: .center)
                 
                 Spacer()
+                
+                Button {
+                    viewModel.startTest = true
+                } label: {
+                    Text("Я хочу пройти тест")
+                        .font(.custom("Gilroy-Semibold", size: 22))
+                }
+                .sheet(isPresented: $viewModel.startTest, content: {
+                    GenderQuestion()
+                })
             }
             .navigationBarItems(leading: HStack {
                 Image("logov3")

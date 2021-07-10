@@ -10,6 +10,7 @@
 		96A7D8DB004E6F44145CC6CF /* Pods_MyPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F809E195E58DA1CE6AA9E3EC /* Pods_MyPlan.framework */; };
 		C716E28C264EF64500A562B7 /* YearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716E28B264EF64500A562B7 /* YearListView.swift */; };
 		C74A011E26075AE0009950CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A011D26075AE0009950CA /* LoginView.swift */; };
+		C78080DC267F9D46005729CD /* GenderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78080DB267F9D46005729CD /* GenderQuestion.swift */; };
 		C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992D9E267F429D008115C8 /* LoginViewModel.swift */; };
 		C7992DA2267F456C008115C8 /* YearListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA1267F456C008115C8 /* YearListViewModel.swift */; };
 		C7992DA5267F4C95008115C8 /* TestAnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */; };
@@ -44,6 +45,7 @@
 		7D7E2E3C2047404343E5607A /* Pods-MyPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.debug.xcconfig"; path = "Target Support Files/Pods-MyPlan/Pods-MyPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		C716E28B264EF64500A562B7 /* YearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListView.swift; sourceTree = "<group>"; };
 		C74A011D26075AE0009950CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C78080DB267F9D46005729CD /* GenderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestion.swift; sourceTree = "<group>"; };
 		C7992D9E267F429D008115C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C7992DA1267F456C008115C8 /* YearListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListViewModel.swift; sourceTree = "<group>"; };
 		C7992DA4267F4C95008115C8 /* TestAnchorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +104,15 @@
 				F809E195E58DA1CE6AA9E3EC /* Pods_MyPlan.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C71349292699ADCA004578E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7DCF38D2635821600551D4D /* UserInfo.swift */,
+				C7E264DF265CD07A00B51140 /* TestAnchorJSON.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C7992D9D267F4296008115C8 /* Login */ = {
@@ -184,9 +195,8 @@
 				C7992DB6267F82A4008115C8 /* Fonts */,
 				C7DCF38526357D0700551D4D /* ServerURL.swift */,
 				C7F3FFB22607492600A63326 /* Views */,
-				C7DCF38D2635821600551D4D /* UserInfo.swift */,
+				C71349292699ADCA004578E0 /* Model */,
 				C7F3FFA22607482800A63326 /* MyPlanApp.swift */,
-				C7E264DF265CD07A00B51140 /* TestAnchorJSON.swift */,
 				C7F3FFA62607482900A63326 /* Assets.xcassets */,
 				C7F3FFAB2607482900A63326 /* Info.plist */,
 				C7F3FFA82607482900A63326 /* Preview Content */,
@@ -211,6 +221,7 @@
 				C799FE862661158A0068B0D2 /* Result */,
 				C7992DA0267F455E008115C8 /* YearList */,
 				C7992DA3267F4C8B008115C8 /* TestAnchor */,
+				C78080DB267F9D46005729CD /* GenderQuestion.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +387,7 @@
 				C7DCF38A26357DBB00551D4D /* ResultView.swift in Sources */,
 				C716E28C264EF64500A562B7 /* YearListView.swift in Sources */,
 				C7B726752658E35C00D21933 /* TestAnchorView.swift in Sources */,
+				C78080DC267F9D46005729CD /* GenderQuestion.swift in Sources */,
 				C7DCF38E2635821600551D4D /* UserInfo.swift in Sources */,
 				C7E264E0265CD07A00B51140 /* TestAnchorJSON.swift in Sources */,
 				C7992D9F267F429D008115C8 /* LoginViewModel.swift in Sources */,
